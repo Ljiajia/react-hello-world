@@ -26,18 +26,8 @@ module.exports = {
                 loader: 'url-loader?limit=8192'
             }
         ]
-
-        //loaders: [
-        //    {
-        //        test: /\.js$/,
-        //        exclude: /node_modules/,
-        //        loader: 'jsx'
-        //    }
-        //]
     },
     plugins: [
-        //commonsPlugin,
-
         //设置此处，则在JS中不用引入require('react')等
         new webpack.ProvidePlugin({
             $: "jquery",
@@ -45,16 +35,5 @@ module.exports = {
             "window.jQuery": "jquery",
             React: "react/addons"
         })
-        //new webpack.optimize.UglifyJsPlugin({
-        //    compress: {
-        //        warnings: false
-        //    }
-        //})
-    ],
-
-    //添加了此项，则表明从外部引入，内部不会打包合并进去
-    //externals: {
-    //    jquery: 'window.jQuery',
-    //    react: 'window.React'
-    //}
+    ]
 };
